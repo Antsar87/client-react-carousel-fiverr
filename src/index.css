@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .swiper-slide-active .card {
+    @apply px-10;
+  }
+
+  .card__content {
+    @apply hidden;
+  }
+
+  .swiper-slide-active .card__content {
+    @apply block;
+  }
+
+  .swiper-slide-prev .card__imgBox {
+    @apply ml-auto;
+  }
+}
+/* 
+.swiper-button-next {
+  right: -1rem;
+} */
+
+.swiper-slide {
+  /* width: 350px !important; */
+  /* padding: 0 1rem; */
+}
+
+/* 
+.swiper-slide-active {
+  min-width: 556px;
+  margin-left: -5rem;
+  margin-right: 8rem !important;
+} */
+
+.swiper-slide-active {
+  min-width: 556px;
+  /* min-width: 486px; */
+  /* min-width: 486px; */
+}
+
+@media (max-width: 1200px) {
+  .swiper-slide-active {
+    min-width: 50%;
+  }
+}
+
+html,
+body {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
