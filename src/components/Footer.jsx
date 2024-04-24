@@ -11,8 +11,8 @@ const Footer = () => {
     return (
         <footer id="footer">
             <div className="footer-top">
-                <div className="container mx-auto px-4">
-                    <div className='grid grid-cols-2 gap-4 md:grid-cols-4'>
+                <div className="max-w-5xl mx-auto px-4">
+                    <div className='grid sm:grid-cols-2 gap-4 md:grid-cols-4'>
 
                         <div className="footer-info">
                             <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies

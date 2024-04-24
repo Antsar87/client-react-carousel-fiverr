@@ -11,7 +11,7 @@ import { Swiper, SwiperSlide, useSwiper, useSwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Accordion from './Accordion';
 
 const data = [
@@ -43,30 +43,29 @@ const data = [
 
 const Carousel = () => {
   const [color, setColor] = useState('');
+  const [isDragging, setIsDragging] = useState(false);
 
-  console.log(color);
+  const handleTouchMove = () => {
+    setIsDragging(true);
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+  };
 
   return (
-    <div className="max-w-3xl lg:max-w-5xl xl:max-w-7xl mx-auto relative px-20">
-      <div className=" ">
+    <div className="desktop max-w-3xl lg:max-w-5xl xl:max-w-5xl mx-auto relative ">
+      <div className="">
         <Swiper
           // install Swiper modules
-          modules={[Navigation, A11y]}
-          // breakpoints={{
-          //   768: {
-          //     slidesPerView: 1,
-          //     spaceBetween: 40,
-          //   },
-          //   1024: {
-          //     slidesPerView: 2,
-          //     spaceBetween: 50,
-          //   },
-          // }}
+          // navigation
+          modules={[Navigation]}
           spaceBetween={30}
-          slidesPerView={2}
-          onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log('slide change')}
+          slidesPerView={'auto'}
           centeredSlides
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          className="px-32"
         >
           {data.map((item, idx) => (
             <SwiperSlide key={idx}>
@@ -75,6 +74,7 @@ const Carousel = () => {
                   color={item.color}
                   isActive={isActive}
                   setColor={setColor}
+                  isDragging={isDragging}
                 />
               )}
             </SwiperSlide>
@@ -104,17 +104,20 @@ const Carousel = () => {
   );
 };
 
-const Card = ({ color, isActive, setColor }) => {
-  if (isActive) {
-    setColor(color);
-  }
+// eslint-disable-next-line react/prop-types
+const Card = ({ color, isActive, setColor, isDragging }) => {
+  useEffect(() => {
+    if (isActive) {
+      setColor(color);
+    }
+  }, [isActive, color]);
 
   return (
     <div
       style={{ border: isActive ? `2px solid ${color}` : null }}
-      className={` py-10 card rounded-xl text-white ${
-        isActive ? 'bg-grayDark' : 'text-center'
-      }`}
+      className={`py-10 card rounded-xl text-white 
+      ${isActive ? 'bg-grayDark' : null}
+      ${isDragging ? 'removeML' : null}`}
     >
       <div className="flex gap-5 items-center h-full">
         <div className={`${isActive ? 'flex-1' : 'card__imgBox'}`}>
