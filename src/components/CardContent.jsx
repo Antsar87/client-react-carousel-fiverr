@@ -20,7 +20,7 @@ const CardContent = () => {
         </h2>
 
         <ul className="mt-4">
-          <li className="flex justify-between border-2 border-dashed rounded-lg px-2 py-1">
+          <li className="flex justify-between border-2 border-dashed rounded-lg px-2 py-1 gap-2">
             <span>Flexible contract plan</span>
 
             <span className="inline-flex items-center gap-2">
@@ -30,7 +30,7 @@ const CardContent = () => {
               </button>
             </span>
           </li>
-          <li className="my-5 flex justify-between border-2 border-dashed rounded-lg px-2 py-1">
+          <li className="my-5 flex justify-between border-2 border-dashed rounded-lg px-2 py-1 gap-2">
             <span>Monthly Rolling plan</span>
 
             <span className="inline-flex items-center gap-2">
@@ -40,7 +40,7 @@ const CardContent = () => {
               </button>
             </span>
           </li>
-          <li className="flex justify-between border-2 border-dashed rounded-lg px-2 py-1">
+          <li className="flex justify-between border-2 border-dashed rounded-lg px-2 py-1 gap-2">
             <span>Pay as you go plan</span>
 
             <span className="inline-flex items-center gap-2">
