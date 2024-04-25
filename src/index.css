@@ -18,6 +18,14 @@
   .desktop .swiper-slide-prev .card__imgBox {
     @apply ml-auto;
   }
+
+  .menu-img {
+    @apply hidden lg:block;
+  }
+
+  .nav-menu ul {
+    @apply w-auto lg:w-[550px];
+  }
 }
 
 .desktop .swiper-slide {
@@ -293,7 +301,7 @@ body {
 .nav-menu,
 .nav-menu * {
   margin: 0;
-  padding: 0;
+  /* padding: 0; */
   list-style: none;
 }
 
@@ -303,7 +311,6 @@ body {
   top: 100%;
   right: 0;
   z-index: 99;
-  width: 500px;
 }
 
 .nav-menu li {

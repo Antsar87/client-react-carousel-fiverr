@@ -65,7 +65,7 @@ const Carousel = () => {
           centeredSlides
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
-          className="px-32"
+          className="px-32 relative"
         >
           {data.map((item, idx) => (
             <SwiperSlide key={idx}>
@@ -84,7 +84,7 @@ const Carousel = () => {
       </div>
 
       <div
-        className={`bg-grayDark text-white max-w-md lg:max-w-xl text-xl py-5 rounded-xl mx-auto`}
+        className={`mt-10 bg-grayDark text-white max-w-md lg:max-w-xl text-xl py-5 rounded-xl mx-auto`}
         style={{ border: `2px solid ${color}` }}
       >
         <header
@@ -146,10 +146,16 @@ const Arrows = () => {
 
   return (
     <div className="text-3xl">
-      <button onClick={() => swiper.slidePrev()} className="rotate-180">
+      <button
+        onClick={() => swiper.slidePrev()}
+        className="rotate-180 absolute top-1/2 left-0 z-10"
+      >
         <GrNext />
       </button>
-      <button onClick={() => swiper.slideNext()}>
+      <button
+        onClick={() => swiper.slideNext()}
+        className="absolute top-1/2 right-0 z-10"
+      >
         <GrNext />
       </button>
     </div>

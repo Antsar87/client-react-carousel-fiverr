@@ -1,19 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import talktalk from '../assets/talktalk.png';
 import male from '../assets/male.jpg';
 import { IoIosArrowDown } from 'react-icons/io';
+import { RxHamburgerMenu } from 'react-icons/rx';
+import { IoCloseOutline } from "react-icons/io5";
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <header className="bg-white py-10 px-5">
       <div className="mx-auto">
         <div className="flex items-center">
           <div className="">
-            <img src={talktalk} className='h-10 block'/>
+            <img src={talktalk} className="h-10 block" />
           </div>
 
-          <nav id="nav-menu-container">
-            <ul className="nav-menu">
+          <button
+            className="lg:hidden absolute right-5 text-3xl"
+            onClick={() => setIsOpen(true)}
+          >
+            <RxHamburgerMenu />
+          </button>
+
+          <nav id="" className="lg:relative z-50">
+            <ul
+              className={`bg-white z-50 transition-transform
+              ${isOpen ? 'translate-x-0' : 'translate-x-full'}
+              min-h-svh top-0 right-0 p-5 nav-menu absolute
+             lg:translate-x-0 lg:p-0 lg:min-h-full lg:static flex flex-col lg:flex-row`}
+            >
+              <li className='text-end lg:hidden pt-5'>
+                <button
+                  className=" text-3xl"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <IoCloseOutline />
+                </button>
+              </li>
+
               <li className="menu-active">
                 <a href="#">Getting Started on TalkTalk</a>
               </li>
