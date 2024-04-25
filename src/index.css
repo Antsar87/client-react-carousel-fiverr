@@ -69,7 +69,8 @@
 } */
 
 .responsive .swiper-wrapper {
-  margin-left: -20%;
+  margin-left: -21%;
+  align-items: center;
 }
 
 .responsive .swiper-slide-active {

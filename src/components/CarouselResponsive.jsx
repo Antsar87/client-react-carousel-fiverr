@@ -14,6 +14,7 @@ import 'swiper/css/pagination';
 
 import { useEffect, useState } from 'react';
 import Accordion from './Accordion';
+import CardContent from './CardContent';
 
 const data = [
   {
@@ -50,7 +51,7 @@ const CarouselResponsive = () => {
   // };
 
   return (
-    <div className="mx-auto border border-yellow-400 resize-x">
+    <div className="mx-auto">
       <div className="responsive px-5">
         <Swiper
           modules={[Pagination]}
@@ -107,18 +108,14 @@ const Card = ({ color, isActive, setColor }) => {
           <img
             src={img}
             alt=""
-            className={`mx-auto h-52 object-contain ${
-              isActive ? 'min-w-36' : null
+            className={`mx-auto object-contain ${
+              isActive ? 'h-52' : 'h-44'
             }`}
           />
         </div>
         <div className="card__content mt-5" style={{ flex: 2 }}>
           <div className="px-5">
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Asperiores nulla adipisci impedit porro, ullam temporibus
-              necessitatibus nihil dignissimos distinctio odit.
-            </p>
+            <CardContent />
           </div>
 
           <div
