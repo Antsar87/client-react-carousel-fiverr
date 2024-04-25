@@ -4,8 +4,7 @@ import { Pagination } from 'swiper/modules';
 
 import img from '../assets/gif2-transparente.gif';
 
-
-import { Swiper, SwiperSlide,} from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -15,6 +14,7 @@ import 'swiper/css/pagination';
 import { useEffect, useState } from 'react';
 import Accordion from './Accordion';
 import CardContent from './CardContent';
+import { FaChevronDown } from 'react-icons/fa';
 
 const data = [
   {
@@ -65,7 +65,7 @@ const CarouselResponsive = () => {
           // }}
           // slidesPerView={2}
           slidesPerView={3}
-          spaceBetween={30}
+          spaceBetween={15}
           centeredSlides
           className="pb-10"
           pagination
@@ -108,9 +108,7 @@ const Card = ({ color, isActive, setColor }) => {
           <img
             src={img}
             alt=""
-            className={`mx-auto object-contain ${
-              isActive ? 'h-52' : 'h-44'
-            }`}
+            className={`mx-auto object-contain ${isActive ? 'h-48' : 'h-44'}`}
           />
         </div>
         <div className="card__content mt-5" style={{ flex: 2 }}>
@@ -133,9 +131,10 @@ const Card = ({ color, isActive, setColor }) => {
 
           <button
             onClick={() => setIsOpen((prev) => !prev)}
-            className="py-2 mt-5 bg-white text-black w-full"
+            className="py-2 mt-5 bg-white text-black w-full flex justify-center items-center gap-2"
           >
             View plan details
+            <FaChevronDown className={`transition-transform ${isOpen ? 'rotate-180' : null}`} />
           </button>
         </div>
       </div>

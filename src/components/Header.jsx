@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <header className="bg-white py-10 px-5">
       <div className="mx-auto">
-        <div className="flex items-center">
+        <div className="flex justify-between items-center">
           <div className="">
             <img src={talktalk} className="h-10 block" />
           </div>
