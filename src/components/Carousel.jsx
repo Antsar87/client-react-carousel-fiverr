@@ -5,6 +5,7 @@ import { FaCheck } from 'react-icons/fa';
 import img from '../assets/gif2-transparente.gif';
 
 import { GrNext } from 'react-icons/gr';
+import { PiQuestionLight } from 'react-icons/pi';
 
 import { Swiper, SwiperSlide, useSwiper, useSwiperSlide } from 'swiper/react';
 
@@ -13,6 +14,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { useEffect, useState } from 'react';
 import Accordion from './Accordion';
+import CardContent from './CardContent';
 
 const data = [
   {
@@ -83,21 +85,22 @@ const Carousel = () => {
         </Swiper>
       </div>
 
-      <div
-        className={`mt-10 bg-grayDark text-white max-w-md lg:max-w-xl text-xl py-5 rounded-xl mx-auto`}
-        style={{ border: `2px solid ${color}` }}
-      >
-        <header
-          className="pb-2 px-4 mb-5"
-          style={{ borderBottom: `2px solid ${color}` }}
+      <div className={`mt-10 max-w-md md:max-w-[565px] mx-auto pl-2`}>
+        <div
+          className="bg-grayDark text-white text-xl py-5 rounded-xl"
+          style={{ border: `2px solid ${color}` }}
         >
-          This plan includes
-        </header>
-
-        <div className="grid grid-cols-2 px-4 gap-y-4">
-          <Accordion colorArrow={color} />
-          <Accordion colorArrow={color} />
-          <Accordion colorArrow={color} />
+          <header
+            className="pb-2 px-4 mb-5"
+            style={{ borderBottom: `2px solid ${color}` }}
+          >
+            This plan includes
+          </header>
+          <div className="grid grid-cols-2 px-4 gap-y-4">
+            <Accordion colorArrow={color} />
+            <Accordion colorArrow={color} />
+            <Accordion colorArrow={color} />
+          </div>
         </div>
       </div>
     </div>
@@ -119,22 +122,16 @@ const Card = ({ color, isActive, setColor, isDragging }) => {
       ${isActive ? 'bg-grayDark' : null}
       ${isDragging ? 'removeML' : null}`}
     >
-      <div className="flex gap-5 items-center h-full">
+      <div className="flex gap-5 h-full">
         <div className={`${isActive ? 'flex-1' : 'card__imgBox'}`}>
           <img
             src={img}
             alt=""
-            className={`"mx-auto h-52 object-contain" ${
-              isActive ? 'min-w-36' : null
-            }`}
+            className={`"mx-auto object-contain" ${isActive ? 'h-56' : 'h-44'}`}
           />
         </div>
         <div className="card__content" style={{ flex: 2 }}>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores
-            nulla adipisci impedit porro, ullam temporibus necessitatibus nihil
-            dignissimos distinctio odit.
-          </p>
+          <CardContent />
         </div>
       </div>
     </div>

@@ -1,16 +1,15 @@
 /* eslint-disable react/prop-types */
 // import Swiper core and required modules
 import { Pagination } from 'swiper/modules';
-import { FaCheck } from 'react-icons/fa';
 
 import img from '../assets/gif2-transparente.gif';
 
-import { GrNext } from 'react-icons/gr';
 
-import { Swiper, SwiperSlide, useSwiper, useSwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide,} from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
+import 'swiper/css/bundle';
 import 'swiper/css/pagination';
 
 import { useEffect, useState } from 'react';
@@ -46,26 +45,29 @@ const data = [
 const CarouselResponsive = () => {
   const [color, setColor] = useState('');
 
-  // console.log(color);
+  // const slideTo = (index) => {
+  //   if (swiper) swiper.slideTo(index);
+  // };
 
   return (
-    <div className="mx-auto">
-      <div className="">
+    <div className="mx-auto border border-yellow-400 resize-x">
+      <div className="responsive px-5">
         <Swiper
-          // install Swiper modules
           modules={[Pagination]}
-
-          breakpoints={{
-            640: {
-              slidesPerView: 3,
-            },
-          }}
-          pagination={{
-            clickable: true,
-          }}
-          slidesPerView={2}
+          // breakpoints={{
+          //   640: {
+          //     slidesPerView: 3,
+          //   },
+          // }}
+          // pagination={{
+          //   clickable: true,
+          // }}
+          // slidesPerView={2}
+          slidesPerView={3}
+          spaceBetween={30}
           centeredSlides
-          className='pb-10'
+          className="pb-10"
+          pagination
         >
           {data.map((item, idx) => (
             <SwiperSlide key={idx}>
@@ -97,7 +99,7 @@ const Card = ({ color, isActive, setColor }) => {
     <div
       style={{ border: isActive ? `2px solid ${color}` : null }}
       className={` pt-10 overflow-hidden card rounded-xl text-white w-full ${
-        isActive ? 'bg-grayDark' : null
+        isActive ? 'bg-grayDark w-96' : null
       }`}
     >
       <div className="h-full">
@@ -124,7 +126,7 @@ const Card = ({ color, isActive, setColor }) => {
             style={{ gridTemplateRows: isOpen ? '1fr' : '0fr' }}
           >
             <div className="overflow-hidden">
-              <div className='px-2'>
+              <div className="px-2">
                 <Accordion colorArrow={color} />
                 <Accordion colorArrow={color} />
                 <Accordion colorArrow={color} />

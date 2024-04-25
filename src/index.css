@@ -36,11 +36,11 @@
   margin-left: 12rem;
 }
 
-.desktop .swiper-slide-prev:has(.removeML) {
+.swiper-slide-prev:has(.removeML) {
   margin-left: 0;
 }
 
-.desktop:has(.removeML) .swiper-slide:first-child {
+.swiper:has(.removeML) .swiper-slide:first-child {
   margin-left: 12rem;
 }
 
@@ -50,6 +50,58 @@
 
 .desktop .swiper-slide-active {
   width: 556px;
+}
+
+.desktop .swiper-wrapper {
+  align-items: center;
+}
+
+/* @media (max-width: 560px) {
+  .responsive .swiper-wrapper {
+    margin-left: -5%;
+  }
+}
+
+@media (max-width: 430px) {
+  .responsive .swiper-wrapper {
+    margin-left: -10%;
+  }
+} */
+
+.responsive .swiper-wrapper {
+  margin-left: -20%;
+}
+
+.responsive .swiper-slide-active {
+  /* flex: 0 0 350px; */
+  width: 70% !important;
+}
+
+@media (min-width: 560px) {
+  .responsive .swiper-wrapper {
+    margin-left: -10%;
+  }
+
+  .responsive .swiper-slide-active {
+    /* flex: 0 0 350px; */
+    width: 50% !important;
+  }
+}
+
+.responsive .swiper-slide {
+  /* backface-visibility: hidden; */
+  /* transition: flex 2s; */
+  /* flex: 0 0 200px; */
+  /* width: 200px !important; */
+}
+
+/* Estilos para el slide activo */
+
+@media (max-width: 500px) {
+  .responsive .swiper-slide-active {
+    /* flex: 0 0 350px; */
+    /* width: 70% !important; */
+  }
 }
 
 html,
