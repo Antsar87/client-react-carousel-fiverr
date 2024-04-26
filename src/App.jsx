@@ -6,7 +6,7 @@ import Header from './components/Header';
 const App = () => {
   return (
     <div
-      className="min-h-svh grid"
+      className="min-h-svh grid w-full"
       style={{
         gridTemplateRows: 'auto 1fr auto',
         gridTemplateColumns: '100%',
