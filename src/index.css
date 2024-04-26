@@ -590,5 +590,10 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 body,
 html {
+  /* overflow: hidden; */
   overflow-x: hidden;
+}
+
+html:has(#active-side) {
+  overflow: hidden;
 }

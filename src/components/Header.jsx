@@ -30,6 +30,7 @@ const Header = () => {
              ${isOpen ? null : 'hidden lg:block'}`}
             >
               <ul
+                id={`${isOpen ? 'active-side' : null}`}
                 className={`bg-white z-50 transition-transform
               ${isOpen ? 'translate-x-0' : 'translate-x-full'}
               min-h-svh top-0 right-0 p-5 nav-menu absolute
